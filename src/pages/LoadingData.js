@@ -1,3 +1,4 @@
+import "./LoadingData.css"
 import React, { useEffect, useState } from 'react';
 
 const LoadingData = () => {
@@ -22,12 +23,10 @@ const LoadingData = () => {
 
  }, [])
 
- console.log(data);
-
  return (
 
-  <div>
-   <ul>
+  <div className='container'>
+   <>
     {data?.mvPurchaseOrders.map((order) => (
      <li key={order.PurchaseOrderID}>
       <button onClick={() => handleOrderClick(order)}>
@@ -35,12 +34,12 @@ const LoadingData = () => {
       </button>
      </li>
     ))}
-   </ul>
+   </>
    {selectedOrder && (
     <div className="popup">
      <div className="popup-content">
-      <span className="close" onClick={handleClosePopup}>
-       &times;
+      <span className="closeBtn" onClick={handleClosePopup}>
+       X
       </span>
       <h2>{selectedOrder.PurchaseOrderTypeAbbreviation} - {selectedOrder.PurchaseOrderNo}</h2>
       <p>Purchase Order Address: {selectedOrder.PurchaseOrderAddress}</p>
@@ -69,11 +68,6 @@ const LoadingData = () => {
      </div>
     </div>
    )}
-
-   {/* <h1>Total data: {data?.length}</h1>
-   {
-    data.map(d => <p>{d.PurchaseOrderTypeAbbreviation}{d.PurchaseOrderNo}</p>)
-   } */}
   </div>
  );
 };
