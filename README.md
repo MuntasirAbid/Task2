@@ -1,3 +1,5 @@
+Explaining below what I have done here:
+
 This code is a React functional component named LoadingData, which is responsible for displaying a list of purchase orders as links, and a pop-up window that displays additional information related to each order when clicked.
 
 The component uses React's useState hook to define two states: data and selectedOrder. data stores the response of the purchaseorders.json file fetched using the useEffect hook, which runs only once when the component mounts. selectedOrder stores the currently selected order, which is initially set to null.
@@ -9,3 +11,5 @@ When an order button is clicked, the handleOrderClick function is called with th
 The pop-up window is closed by clicking on the "close" button or outside the pop-up window. When the "close" button is clicked, the handleClosePopup function is called, which sets the selectedOrder state to null. The pop-up window is hidden when the selectedOrder state is null.
 
 Finally, the LoadingData component is exported as the default export of the module.
+
+# It relates to many project in my repository. so far  I have done so many full-stack project. 
