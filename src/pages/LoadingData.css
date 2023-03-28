@@ -4,8 +4,13 @@
 }
 
 .closeBtn {
+ padding: 5px;
  cursor: pointer;
+ margin: 30px;
+}
 
+.order {
+ padding-top: 15px;
 }
 
 .closeBtn:hover {

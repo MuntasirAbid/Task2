@@ -1,70 +1,11 @@
-# Getting Started with Create React App
+This code is a React functional component named LoadingData, which is responsible for displaying a list of purchase orders as links, and a pop-up window that displays additional information related to each order when clicked.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The component uses React's useState hook to define two states: data and selectedOrder. data stores the response of the purchaseorders.json file fetched using the useEffect hook, which runs only once when the component mounts. selectedOrder stores the currently selected order, which is initially set to null.
 
-## Available Scripts
+The component renders a div element with a class name container, which wraps two fragments: the first fragment contains a list of purchase orders, where each order is rendered as a li element with a button element that displays the order abbreviation and number. The second fragment renders a pop-up window if an order is selected. The pop-up window is defined using two nested div elements with class names popup and popup-content. The popup-content div contains information related to the selected order, including its abbreviation and number, address, contact person, status, and a table with the details of the purchase order.
 
-In the project directory, you can run:
+When an order button is clicked, the handleOrderClick function is called with the corresponding order object as an argument. This function sets the selectedOrder state to the clicked order, which triggers the rendering of the pop-up window.
 
-### `npm start`
+The pop-up window is closed by clicking on the "close" button or outside the pop-up window. When the "close" button is clicked, the handleClosePopup function is called, which sets the selectedOrder state to null. The pop-up window is hidden when the selectedOrder state is null.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Finally, the LoadingData component is exported as the default export of the module.
